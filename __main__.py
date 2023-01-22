@@ -6,17 +6,22 @@ def main():
     file.create_file()
     f = open("in.txt", "r")
 
-    l = []
-    sm = ms.StructureDict(l)
+    structure_dict = ms.StructureDict()
 
+    integer_values = []
+    '''
+    read each line (integer values) of the file and add them to the list
+    '''
     for i in range(file.MAX_NUM):
-        num = f.readline()
-        sm.add(num)
+        value = f.readline()
+        integer_values.append(int(value))
+        
+    structure_dict.dictionary(integer_values)
+    structure_dict.writing()
 
-    sm.test()
-    sm.dictionary()
-    sm.writing()
-
+    f.close()
+    file.move_file()
+    
     return
 
 
