@@ -2,11 +2,15 @@ import file
 import my_structure as ms
 
 
+INEDITO = 0
+REPETIDO = 1
+
+
 def main():
     file.create_file()
     f = open("in.txt", "r")
 
-    structure_dict = ms.StructureDict()
+    structure_dict = ms.Structure()
 
     integer_values = []
     '''
@@ -15,9 +19,9 @@ def main():
     for i in range(file.MAX_NUM):
         value = f.readline()
         integer_values.append(int(value))
-        
-    structure_dict.dictionary(integer_values)
-    structure_dict.writing()
+
+    structure_dict.verify_using_dict(integer_values)
+    structure_dict.writing_using_dict()
 
     f.close()
     file.move_file()
