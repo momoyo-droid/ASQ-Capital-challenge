@@ -1,31 +1,28 @@
 import file
 import my_structure as ms
 
-
-INEDITO = 0
-REPETIDO = 1
-
-
 def main():
     file.create_file()
-    f = open("in.txt", "r")
 
     structure_dict = ms.Structure()
 
-    integer_values = []
-    '''
-    read each line (integer values) of the file and add them to the list
-    '''
-    for i in range(file.MAX_NUM):
-        value = f.readline()
-        integer_values.append(int(value))
+    with open("in.txt", "r") as in_txt:
 
-    structure_dict.verify_using_dict(integer_values)
-    structure_dict.writing_using_dict()
+        with open("out.txt", "w") as out_txt:
+            for line in in_txt:
+                key = int(line)
+                structure_dict.add(key) # key to dictionary
+            # write out.txt file
+            for key, value in structure_dict.dictionary.items():
+                if value > 1:
+                    out_txt.write(str(key) + " REPETIDO" + '\n')
+                else:
+                    out_txt.write(str(key) + " INEDITO" + '\n')
 
-    f.close()
+    structure_dict.show()
+
     file.move_file()
-    
+
     return
 
 
