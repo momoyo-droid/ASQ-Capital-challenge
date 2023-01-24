@@ -1,6 +1,7 @@
 import file
 import my_structure as ms
 
+
 def main():
     file.create_file()
 
@@ -11,7 +12,7 @@ def main():
         with open("out.txt", "w") as out_txt:
             for line in in_txt:
                 key = int(line)
-                structure_dict.add(key) # key to dictionary
+                structure_dict.add(key)   # key to dictionary
             # write out.txt file
             for key, value in structure_dict.dictionary.items():
                 if value > 1:
