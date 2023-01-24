@@ -1,9 +1,7 @@
-
 '''
 class responsible for creating the dictionary structure and 
 incrementing the value that each key is repeated in the file
 '''
-
 class Structure():
     def __init__(self) -> None:
         self.dictionary = {} # data structure
