@@ -25,3 +25,9 @@ jobs:
         run: |
           echo "Third in"
           python3 __main__.py
+      - name: Generating Artifacts Results 
+        uses: actions/upload-artifact@v3
+        with:
+          name: Output Result
+          path: txt/out.txt
+        
