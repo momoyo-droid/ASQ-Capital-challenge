@@ -23,5 +23,5 @@ jobs:
           python3 __main__.py
       - name: Run third in
         run: |
-          echo "Third in
+          echo "Third in"
           python3 __main__.py
