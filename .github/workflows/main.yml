@@ -13,21 +13,33 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.8"
+          
       - name: Run first in
         run: |
           echo "First in"
           python3 __main__.py
+      - name: Generating Artifact Result - First in
+        uses: actions/upload-artifact@v3
+        with:
+          name: Output Result - First in
+          path: txt/out.txt
+          
       - name: Run second in
         run: |
           echo "Second in"
           python3 __main__.py
+      - name: Generating Artifact Result - Second in
+        uses: actions/upload-artifact@v3
+        with:
+          name: Output Result - Second in
+          path: txt/out.txt
+      
       - name: Run third in
         run: |
           echo "Third in"
           python3 __main__.py
-      - name: Generating Artifacts Results 
+      - name: Generating Artifact Result - Third in
         uses: actions/upload-artifact@v3
         with:
-          name: Output Result
+          name: Output Result - Third in
           path: txt/out.txt
-        
