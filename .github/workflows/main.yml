@@ -16,30 +16,51 @@ jobs:
           
       - name: Run first in
         run: |
-          echo "First in"
+          echo "First in and First Out"
           python3 __main__.py
+          
       - name: Generating Artifact Result - First in
         uses: actions/upload-artifact@v3
         with:
-          name: Output Result - First in
-          path: txt/in.txt && txt/out.txt
+          name: Input Result - First in
+          path: txt/in.txt    
           
+      - name: Generating Artifact Result - First Out
+        uses: actions/upload-artifact@v3
+        with:
+          name: Output Result - First Out
+          path: txt/out.txt    
+  
       - name: Run second in
         run: |
-          echo "Second in"
+          echo "Second in and Second Out"
           python3 __main__.py
+          
       - name: Generating Artifact Result - Second in
         uses: actions/upload-artifact@v3
         with:
-          name: Output Result - Second in
-          path: txt/in.txt && txt/out.txt
+          name: Input Result - Second in
+          path: txt/in.txt     
+          
+      - name: Generating Artifact Result - Second Out
+        uses: actions/upload-artifact@v3
+        with:
+          name: Output Result - Second Out
+          path: txt/out.txt
       
       - name: Run third in
         run: |
-          echo "Third in"
+          echo "Third in and Third Out"
           python3 __main__.py
+          
       - name: Generating Artifact Result - Third in
         uses: actions/upload-artifact@v3
         with:
-          name: Output Result - Third in
-          path: txt/in.txt && txt/out.txt
+          name: Input Result - Third in
+          path: txt/in.txt     
+          
+      - name: Generating Artifact Result - Third Out
+        uses: actions/upload-artifact@v3
+        with:
+          name: Output Result - Third Out
+          path: txt/out.txt
