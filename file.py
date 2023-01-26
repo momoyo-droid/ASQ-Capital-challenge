@@ -8,18 +8,23 @@ FILES_TO_MOVE = ['in.txt', 'out.txt']
 '''
 method responsible create a file
 '''
+
+
 def create_file():
     '''create a file and recording integer values in it (one per line)'''
     with open("in.txt", 'w', encoding='utf-8') as file:
         for i in range(MAX_NUM):
-            value = rd.randint(0, 100)
+            value = rd.randint(0, 50)
             file.write(f'{value}\n')
 
     return
 
+
 '''
 method responsible for move files to another directory
 '''
+
+
 def move_file():
     current_path = os.getcwd()
 

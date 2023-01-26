@@ -12,15 +12,9 @@ def main():
         with open("out.txt", "w") as out_txt:
             for line in in_txt:
                 key = int(line)
-                structure_dict.add(key)   # key to dictionary
-            # write out.txt file
-            for key, value in structure_dict.dictionary.items():
-                if value > 1:
-                    out_txt.write(str(key) + " REPETIDO" + '\n')
-                else:
-                    out_txt.write(str(key) + " INEDITO" + '\n')
-
-    structure_dict.show()
+                # key to dictionary and write out file
+                structure_dict.add(key, out_txt)
+            structure_dict.show()
 
     file.move_file()
 
