@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Output Result - First in
-          path: txt/out.txt
+          path: txt/in.txt && txt/out.txt
           
       - name: Run second in
         run: |
@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Output Result - Second in
-          path: txt/out.txt
+          path: txt/in.txt && txt/out.txt
       
       - name: Run third in
         run: |
@@ -42,4 +42,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Output Result - Third in
-          path: txt/out.txt
+          path: txt/in.txt && txt/out.txt
